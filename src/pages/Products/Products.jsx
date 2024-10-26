@@ -5,14 +5,14 @@ import './Products.css';
 const categories = ['All', 'Mobile Phones', 'Accessories', 'Laptops', 'Vapes', 'Disposable Vapes', 'Coil Vapes', 'Vapes Category 2'];
 
 const productsData = [
-  { id: 1, name: 'iPhone 12', category: 'Mobile Phones', price: 799, image: 'src/assets/iphone.png', description: 'Latest iPhone with A14 Bionic chip' },
-  { id: 2, name: 'Samsung Galaxy S21', category: 'Mobile Phones', price: 699, image: 'src/assets/samsung.png', description: 'Powerful Android smartphone' },
-  { id: 3, name: 'AirPods Pro', category: 'Accessories', price: 249, image: 'src/assets/ipods.png', description: 'Wireless earbuds with active noise cancellation' },
-  { id: 4, name: 'MacBook Air', category: 'Laptops', price: 999, image: 'src/assets/tablet.png', description: 'Thin and light laptop with M1 chip' },
-  { id: 5, name: 'JUUL Starter Kit', category: 'Vapes', price: 34.99, image: 'src/assets/tablet.png', description: 'Popular e-cigarette starter kit' },
-  { id: 6, name: 'JUUL Starter Kit', category: 'Disposable Vapes', price: 34.99, image: 'src/assets/tablet.png', description: 'Popular e-cigarette starter kit' },
-  { id: 7, name: 'JUUL Starter Kit', category: 'Coil Vapes', price: 34.99, image: 'src/assets/tablet.png', description: 'Popular e-cigarette starter kit' },
-  { id: 8, name: 'JUUL Starter Kit', category: 'Vapes Category 2', price: 34.99, image: 'src/assets/tablet.png', description: 'Popular e-cigarette starter kit' },
+  { id: 1, name: 'iPhone 12', category: 'Mobile Phones', price: 799, image: '/src/assets/iphone.png', description: 'Latest iPhone with A14 Bionic chip' },
+  { id: 2, name: 'Samsung Galaxy S21', category: 'Mobile Phones', price: 699, image: '/src/assets/samsung.png', description: 'Powerful Android smartphone' },
+  { id: 3, name: 'AirPods Pro', category: 'Accessories', price: 249, image: '/src/assets/ipods.png', description: 'Wireless earbuds with active noise cancellation' },
+  { id: 4, name: 'MacBook Air', category: 'Laptops', price: 999, image: '/src/assets/tablet.png', description: 'Thin and light laptop with M1 chip' },
+  { id: 5, name: 'JUUL Starter Kit', category: 'Vapes', price: 34.99, image: '/src/assets/tablet.png', description: 'Popular e-cigarette starter kit' },
+  { id: 6, name: 'JUUL Starter Kit', category: 'Disposable Vapes', price: 34.99, image: '/src/assets/tablet.png', description: 'Popular e-cigarette starter kit' },
+  { id: 7, name: 'JUUL Starter Kit', category: 'Coil Vapes', price: 34.99, image: '/src/assets/tablet.png', description: 'Popular e-cigarette starter kit' },
+  { id: 8, name: 'JUUL Starter Kit', category: 'Vapes Category 2', price: 34.99, image: '/src/assets/tablet.png', description: 'Popular e-cigarette starter kit' },
   // Add more products as needed
 ];
 
@@ -94,7 +94,6 @@ const Products = () => {
             <img src={product.image} alt={product.name} className="product-image" />
             <h3>{product.name}</h3>
             <p>{product.category}</p>
-            <p className="product-price">${product.price}</p>
           </Link>
         ))}
       </div>

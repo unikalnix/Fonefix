@@ -40,7 +40,7 @@ const ProductDetails = () => {
             <div className="image-placeholder">Image not available</div>
           ) : (
             <img 
-              src={product.image} // Use the image from the product
+              src={`/${product.image}`} // Use the image from the product
               alt={product.name} 
               className="product-image" 
               onError={handleImageError}
