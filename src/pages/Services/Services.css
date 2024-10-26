@@ -1,351 +1,355 @@
 /* Services.css */
 
 .services-container {
-    font-family: 'Roboto', sans-serif;
-    color: #2c3e50;
-    line-height: 1.6;
-    background-color: #f0f4f8;
+  font-family: "Roboto", sans-serif;
+  color: #2c3e50;
+  line-height: 1.6;
+  background-color: #f0f4f8;
 }
 
 /* Hero Section */
 .hero {
-    background-image: url('src/assets/header-img.png');
-    background-size: cover;
-    background-position: center;
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
+  background-image: url("../../assets/header-img.png");
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
 }
 
 .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(44, 62, 80, 0.7);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(44, 62, 80, 0.7);
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: white;
-    font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-weight: 300;
 }
 
 .hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .cta-button {
-    background-color: #3498db;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  background-color: #3498db;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .cta-button:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Navigation Bar */
 .services-nav {
-    position: sticky;
-    top: 0;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    z-index: 1000;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .services-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 60px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
 }
 
 .services-nav li a {
-    color: #34495e;
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: all 0.3s ease;
-    font-weight: 500;
+  color: #34495e;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
-.services-nav li a:hover, .services-nav li a.active {
-    color: #3498db;
-    transform: translateY(-2px);
+.services-nav li a:hover,
+.services-nav li a.active {
+  color: #3498db;
+  transform: translateY(-2px);
 }
 
-.services-overview p{
-    text-align: center;
+.services-overview p {
+  text-align: center;
 }
 
 /* Section Styles */
 section {
-    padding: 0 20px 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 0 20px 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-h2, h3 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #2c3e50;
-    font-weight: 300;
+h2,
+h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-weight: 300;
 }
 
 /* Service Categories */
 .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
 }
 
 .service-category {
-    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .service-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-    color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
 }
 
 .service-icon {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 20px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 0.3s ease;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease;
 }
 
 .service-category:hover .service-icon {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .service-category h4 {
-    margin-bottom: 10px;
-    color: #2c3e50;
-    transition: color 0.3s ease;
+  margin-bottom: 10px;
+  color: #2c3e50;
+  transition: color 0.3s ease;
 }
 
 .service-category:hover h4 {
-    color: white;
+  color: white;
 }
 
 .price {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-    color: #3498db;
-    transition: color 0.3s ease;
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #3498db;
+  transition: color 0.3s ease;
 }
 
 .service-category:hover .price {
-    color: #ecf0f1;
+  color: #ecf0f1;
 }
 
 /* Why Choose Us */
 .why-choose-us ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 0;
-    list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style-type: none;
 }
 
 .why-choose-us li {
-    background-color: #ecf0f1;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .why-choose-us li:hover {
-    background-color: #3498db;
-    color: white;
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #3498db;
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Booking Info */
-.booking-info{
-    padding-top: 60px;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #2980b9;
-    border-radius: 8px;
-    color: white;
+.booking-info {
+  padding-top: 60px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2980b9;
+  border-radius: 8px;
+  color: white;
 }
 
-.booking-info h3{
-    color: white;
+.booking-info h3 {
+  color: white;
 }
 .booking-info ul {
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center ;
-    justify-content: center;
-    list-style: none;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
 }
 
 .book-now-button {
-    display: block;
-    width: 200px;
-    margin: 0 auto;
-    padding: 12px 24px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .book-now-button:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Testimonials */
 .testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 blockquote {
-    background-color: #ecf0f1;
-    border-left: 5px solid #3498db;
-    padding: 20px;
-    margin: 0;
-    border-radius: 12px;
-    transition: all 0.3s ease;
+  background-color: #ecf0f1;
+  border-left: 5px solid #3498db;
+  padding: 20px;
+  margin: 0;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
 blockquote:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 blockquote p {
-    font-style: italic;
-    margin-bottom: 10px;
-    color: #34495e;
+  font-style: italic;
+  margin-bottom: 10px;
+  color: #34495e;
 }
 
 blockquote cite {
-    font-weight: bold;
-    color: #2c3e50;
+  font-weight: bold;
+  color: #2c3e50;
 }
 
 /* Call to Action */
 .cta {
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-    border-radius: 8px;
-    margin-top: 60px;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 8px;
+  margin-top: 60px;
 }
 
 .cta h3 {
-    margin-bottom: 20px;
-    color: white;
+  margin-bottom: 20px;
+  color: white;
 }
 
 .cta button {
-    background-color: white;
-    color: #3498db;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  background-color: white;
+  color: #3498db;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .cta button:hover {
-    background-color: #ecf0f1;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #ecf0f1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
+  .hero h1 {
+    font-size: 2rem;
+  }
 
-    .hero p {
-        font-size: 1rem;
-    }
+  .hero p {
+    font-size: 1rem;
+  }
 
-    .services-nav ul {
-        flex-wrap: wrap;
-        height: auto;
-        padding-top: 20px;
-    }
+  .services-nav ul {
+    flex-wrap: wrap;
+    height: auto;
+    padding-top: 20px;
+  }
 
-    .services-nav li {
-        flex: 1 1 auto;
-        text-align: center;
-        margin-bottom: 16px;
-    }
+  .services-nav li {
+    flex: 1 1 auto;
+    text-align: center;
+    margin-bottom: 16px;
+  }
 
-    .services-nav li a {
-        padding: 10px;
-    }
+  .services-nav li a {
+    padding: 10px;
+  }
 
-    section {
-        padding: 40px 20px;
-    }
+  section {
+    padding: 40px 20px;
+  }
 
-    .service-grid, .why-choose-us ul, .testimonial-grid {
-        grid-template-columns: 1fr;
-    }
+  .service-grid,
+  .why-choose-us ul,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
 }
