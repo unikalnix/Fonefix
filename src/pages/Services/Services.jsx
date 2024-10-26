@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './Services.css'
+import './Services.css';
 import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
     const [activeSection, setActiveSection] = useState('overview');
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,6 +29,25 @@ const Services = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [activeSection]);
+
+    useEffect(() => {
+        // Check if there's a hash in the URL
+        const hash = window.location.hash;
+        if (hash) {
+            const targetId = hash.substring(1); // Remove the '#' character
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                const navHeight = 120; // Height of the fixed navigation bar
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - navHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }, []);
 
     const handleNavClick = (e, targetId) => {
         e.preventDefault();
@@ -72,7 +91,7 @@ const Services = () => {
             </section>
 
             {/* Service Categories Section */}
-            <section id="service-categories" className="service-categories">
+            <section id ="service-categories" className="service-categories">
                 <h3>Our Services</h3>
                 <div className="service-grid">
                     <div className="service-category">
@@ -147,7 +166,7 @@ const Services = () => {
             {/* Call to Action */}
             <div className="cta">
                 <h3>Ready to Get Started?</h3>
-                <button onClick={() =>  navigate('/contact')}>Contact Us</button>
+                <button onClick={() => navigate('/contact')}>Contact Us</button>
             </div>
         </div>
     );

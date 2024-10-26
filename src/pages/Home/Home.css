@@ -37,7 +37,6 @@ h2 {
 
 .category li {
   background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-  border: 1px solid #bdc3c7;
   border-radius: 12px;
   margin-right: 20px;
   flex: 0 0 auto;

@@ -1,46 +1,118 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './Products.css';
+import React, { useState, useEffect } from "react";
+import { Link, useParams, useLocation } from "react-router-dom";
+import "./Products.css";
 
-const categories = ['All', 'Mobile Phones', 'Accessories', 'Laptops', 'Vapes', 'Disposable Vapes', 'Coil Vapes', 'Vapes Category 2'];
+const categories = [
+  "All",
+  "Mobile Phones",
+  "Accessories",
+  "Tablets",
+  "iPods",
+  "Used Phones",
+  "Vapes",
+];
 
 const productsData = [
-  { id: 1, name: 'iPhone 12', category: 'Mobile Phones', price: 799, image: '/src/assets/iphone.png', description: 'Latest iPhone with A14 Bionic chip' },
-  { id: 2, name: 'Samsung Galaxy S21', category: 'Mobile Phones', price: 699, image: '/src/assets/samsung.png', description: 'Powerful Android smartphone' },
-  { id: 3, name: 'AirPods Pro', category: 'Accessories', price: 249, image: '/src/assets/ipods.png', description: 'Wireless earbuds with active noise cancellation' },
-  { id: 4, name: 'MacBook Air', category: 'Laptops', price: 999, image: '/src/assets/tablet.png', description: 'Thin and light laptop with M1 chip' },
-  { id: 5, name: 'JUUL Starter Kit', category: 'Vapes', price: 34.99, image: '/src/assets/tablet.png', description: 'Popular e-cigarette starter kit' },
-  { id: 6, name: 'JUUL Starter Kit', category: 'Disposable Vapes', price: 34.99, image: '/src/assets/tablet.png', description: 'Popular e-cigarette starter kit' },
-  { id: 7, name: 'JUUL Starter Kit', category: 'Coil Vapes', price: 34.99, image: '/src/assets/tablet.png', description: 'Popular e-cigarette starter kit' },
-  { id: 8, name: 'JUUL Starter Kit', category: 'Vapes Category 2', price: 34.99, image: '/src/assets/tablet.png', description: 'Popular e-cigarette starter kit' },
+  {
+    id: 1,
+    name: "iPhone 12",
+    category: "Mobile Phones",
+    price: 799,
+    image: "/src/assets/iphone.png",
+    description: "Latest iPhone with A14 Bionic chip",
+  },
+  {
+    id: 2,
+    name: "Samsung Galaxy S21",
+    category: "Mobile Phones",
+    price: 699,
+    image: "/src/assets/samsung.png",
+    description: "Powerful Android smartphone",
+  },
+  {
+    id: 3,
+    name: "AirPods Pro",
+    category: "Accessories",
+    price: 249,
+    image: "/src/assets/ipods.png",
+    description: "Wireless earbuds with active noise cancellation",
+  },
+  {
+    id: 4,
+    name: "MacBook Air",
+    category: "Laptops",
+    price: 999,
+    image: "/src/assets/tablet.png",
+    description: "Thin and light laptop with M1 chip",
+  },
+  {
+    id: 5,
+    name: "JUUL Starter Kit",
+    category: "Vapes",
+    price: 34.99,
+    image: "/src/assets/tablet.png",
+    description: "Popular e-cigarette starter kit",
+  },
+  {
+    id: 6,
+    name: "JUUL Starter Kit",
+    category: "Disposable Vapes",
+    price: 34.99,
+    image: "/src/assets/tablet.png",
+    description: "Popular e-cigarette starter kit",
+  },
+  {
+    id: 7,
+    name: "JUUL Starter Kit",
+    category: "Coil Vapes",
+    price: 34.99,
+    image: "/src/assets/tablet.png",
+    description: "Popular e-cigarette starter kit",
+  },
+  {
+    id: 8,
+    name: "JUUL Starter Kit",
+    category: "Vapes",
+    price: 34.99,
+    image: "/src/assets/tablet.png",
+    description: "Popular e-cigarette starter kit",
+  },
   // Add more products as needed
 ];
 
 const Products = () => {
   const [products, setProducts] = useState(productsData);
   const [filteredProducts, setFilteredProducts] = useState(productsData);
-  const [currentCategory, setCurrentCategory] = useState('All');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [currentCategory, setCurrentCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [productsPerPage] = useState(8);
+  const [productsPerPage] = useState(9);
+  const location = useLocation(); // Get the current location
 
   useEffect(() => {
-    setProducts(productsData);
-  }, [productsData, categories]);
+    const queryParams = new URLSearchParams(location.search);
+    const categoryFromUrl = queryParams.get("category");
+    if (categoryFromUrl && categories.includes(categoryFromUrl)) {
+      setCurrentCategory(categoryFromUrl);
+    }
+  }, [location]);
 
   useEffect(() => {
     filterProducts();
   }, [currentCategory, searchTerm]);
 
   const filterProducts = () => {
-    let filtered = products;
-    if (currentCategory !== 'All') {
-      filtered = filtered.filter(product => product.category === currentCategory);
+    let filtered = productsData; // Use productsData directly
+    if (currentCategory !== "All") {
+      filtered = filtered.filter(
+        (product) => product.category === currentCategory
+      );
     }
     if (searchTerm) {
-      filtered = filtered.filter(product =>
-        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.description.toLowerCase().includes(searchTerm.toLowerCase())
+      filtered = filtered.filter(
+        (product) =>
+          product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          product.description.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
     setFilteredProducts(filtered);
@@ -49,12 +121,15 @@ const Products = () => {
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const handleProductClick = (product) => {
-    localStorage.setItem('selectedProduct', JSON.stringify(product));
+    localStorage.setItem("selectedProduct", JSON.stringify(product));
   };
 
   return (
@@ -71,7 +146,7 @@ const Products = () => {
         />
 
         <nav className="category-nav">
-          {categories.map(category => (
+          {categories.map((category) => (
             <button
               key={category}
               className={`category-btn`}
@@ -84,14 +159,18 @@ const Products = () => {
       </div>
 
       <div className="products-grid">
-        {currentProducts.map(product => (
+        {currentProducts.map((product) => (
           <Link
             to={`/product/${product.id}`}
             key={product.id}
             className="product-card"
             onClick={() => handleProductClick(product)}
           >
-            <img src={product.image} alt={product.name} className="product-image" />
+            <img
+              src={product.image}
+              alt={product.name}
+              className="product-image"
+            />
             <h3>{product.name}</h3>
             <p>{product.category}</p>
           </Link>
@@ -99,7 +178,9 @@ const Products = () => {
       </div>
 
       <div className="pagination">
-        {Array.from({ length: Math.ceil(filteredProducts.length / productsPerPage) }).map((_, index) => (
+        {Array.from({
+          length: Math.ceil(filteredProducts.length / productsPerPage),
+        }).map((_, index) => (
           <button
             key={index}
             onClick={() => paginate(index + 1)}
