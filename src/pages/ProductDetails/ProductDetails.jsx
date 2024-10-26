@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import './ProductDetails.css';
-
+import React, { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import "./ProductDetails.css";
 const ProductDetails = () => {
   const [product, setProduct] = useState(null);
   const [imageError, setImageError] = useState(false);
@@ -9,8 +8,7 @@ const ProductDetails = () => {
   const { id } = params;
 
   useEffect(() => {
-    const storedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
-    
+    const storedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
     if (storedProduct && storedProduct.id === parseInt(id)) {
       setProduct(storedProduct);
     } else {
@@ -25,7 +23,9 @@ const ProductDetails = () => {
   if (!product) {
     return (
       <div className="product-details-container">
-        <Link to="/products" className="back-btn">&larr; Back to Products</Link>
+        <Link to="/products" className="back-btn">
+          &larr; Back to Products
+        </Link>
         <p>Product not found</p>
       </div>
     );
@@ -33,16 +33,18 @@ const ProductDetails = () => {
 
   return (
     <div className="product-details-container">
-      <Link to="/products" className="back-btn">&larr; Back to Products</Link>
+      <Link to="/products" className="back-btn">
+        &larr; Back to Products
+      </Link>
       <div className="product-details">
         <div className="product-image-container">
           {imageError ? (
             <div className="image-placeholder">Image not available</div>
           ) : (
-            <img 
-              src={`/${product.image}`} // Use the image from the product
-              alt={product.name} 
-              className="product-image" 
+            <img
+              src={`${product.image}`} // Use the image from the product
+              alt={product.name}
+              className="product-image"
               onError={handleImageError}
             />
           )}
