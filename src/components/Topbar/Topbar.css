@@ -1,0 +1,53 @@
+
+  .topbar {
+    height: 100%;
+    position: fixed;
+    top: -100%; /* Hide it above the viewport initially */
+    left: 0;
+    right: 0;
+    background-color: #243642; /* Background color of the top bar */
+    color: white; /* Text color */
+    padding: 20px;
+    transition: top 0.3s ease; /* Smooth transition for appearing */
+    z-index: 1001; /* Below the hamburger but above content */
+  }
+  
+  .topbar.open {
+    top: 0; /* Slide down into view */
+  }
+  
+  .topbar ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center text */
+  }
+  
+  .topbar li {
+    margin: 10px 0; /* Vertical spacing between items */
+  }
+  
+  .topbar a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Font size for links */
+  }
+  
+  .close_btn {
+    width: 150px;
+    margin-top: 20px; /* Space above close button */
+    padding: 10px 20px; /* Padding for the button */
+    background-color: #2075C4; /* Close button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 23px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .close_btn:hover{
+    background-color: #1A6D9D;
+  }
+  

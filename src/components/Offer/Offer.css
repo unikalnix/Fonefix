@@ -1,0 +1,92 @@
+.offer_container {
+    min-height: 500px;
+    margin-top: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.offer_container_main {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden; /* Prevents overflow */
+}
+
+.offer_container_left {
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 80px;
+    padding-left: 30px;
+    width: 40%; /* Default width */
+    position: relative; /* Change to relative */
+    z-index: 1; /* Bring to front */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.offer_container_left h2 {
+    font-size: max(5vw, 30px);
+}
+
+.offer_container_left p {
+    font-size: max(2vw, 12px);
+}
+
+.offer_container_right {
+    width: 60%; /* Default width */
+    height: 100%;
+    background-color: #2075c4;
+    position: absolute;
+    right: 0; /* Align to right */
+    clip-path: polygon(40% 0, 100% 0%, 100% 100%, 0% 100%);
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Center the image */
+    overflow: hidden; /* Prevent image overflow */
+}
+
+.offer_container_right img {
+    width: 100%; /* Fill the entire width of the container */
+    height: 100%; /* Fill the entire height of the container */
+    object-fit: cover; /* Ensure the image covers the area */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .offer_container_main {
+        flex-direction: column; /* Stack the sections */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .offer_container_left {
+        width: 100%; /* Full width on small screens */
+        padding: 20px; /* Adjust padding */
+        position: static; /* Remove absolute positioning */
+        height: 180px;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+    }
+
+    .offer_container_right {
+        width: 100%; /* Full width on small screens */
+        position: static; /* Remove absolute positioning */
+        clip-path: polygon(100% -60%, 100% 0%, 100% 100%, 0 100%);
+        height: 300px; /* Adjust height */
+        display: flex; /* Add flex display */
+        justify-content: center; /* Center image horizontally */
+        align-items: center; /* Center image vertically */
+    }
+
+    .offer_container_right img {
+        width: 100%; /* Fill the entire width of the container */
+        height: 100%; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure the image covers the area */
+    }
+}
